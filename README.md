@@ -1,5 +1,4 @@
 # golang_shopifybot
-Shopify bot... ~description to be filled
 
 ### Preface
 This is a basic shopify bot that was built with GoLang. This bot is fully powered by HTTP requests so it doesn't need to use a browser and is extremely lightweight. All the profile and task data is stored in CSV files to ensure quick and easy access to the program. Can create and edit profiles/tasks directly in the program instead of accessing the CSV if you wish to.
