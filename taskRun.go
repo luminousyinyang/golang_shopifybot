@@ -32,9 +32,9 @@ type Task struct {
 	size string
 	profile string
 }
-
+	
 func TaskCreate() {
-	fileRD, err := os.Open("/Users/userid/path/to/csv/tasks.csv")
+	fileRD, err := os.Open(tasksCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -66,7 +66,7 @@ func TaskCreate() {
 	profile = scanner.Text()
 
 
-	fileAPWR, err := os.OpenFile("/Users/userid/path/to/csv/tasks.csv", os.O_APPEND|os.O_CREATE|os.O_WRONLY , 0644)
+	fileAPWR, err := os.OpenFile(tasksCSV, os.O_APPEND|os.O_CREATE|os.O_WRONLY , 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -87,7 +87,7 @@ func TaskCreate() {
 }
 
 func TaskEdit() {
-	fileRD, err := os.Open("/Users/userid/path/to/csv/tasks.csv")
+	fileRD, err := os.Open(tasksCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -129,7 +129,7 @@ func TaskEdit() {
 		taskRecord[editId-1][profileidx] = editPropVal
 	}
 
-	fileWR, err := os.Create("/Users/userid/path/to/csv/tasks.csv")
+	fileWR, err := os.Create(tasksCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -158,7 +158,7 @@ func TaskStart() {
 		panic(err)
 	}
 
-	file, err := os.Open("/Users/userid/path/to/csv/tasks.csv")
+	file, err := os.Open(tasksCSV)
 	if err != nil {
 		panic(err)
 	}

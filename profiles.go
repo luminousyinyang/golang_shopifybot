@@ -45,7 +45,7 @@ type Profile struct {
 
 func ProfileCreate(){
 
-	file, err := os.Open("/Users/userid/path/to/csv/profiles.csv")
+	file, err := os.Open(profilesCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -107,7 +107,7 @@ func ProfileCreate(){
 	scanner.Scan()
 	cardCVV = scanner.Text()
 	
-	profileCsv, err := os.OpenFile("/Users/userid/path/to/csv/profiles.csv", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	profileCsv, err := os.OpenFile(profilesCSV, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -133,7 +133,7 @@ func ProfileCreate(){
 
 
 func ProfileEdit() {
-	file, err := os.Open("/Users/userid/path/to/csv/profiles.csv")
+	file, err := os.Open(profilesCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -214,7 +214,7 @@ func ProfileEdit() {
 		log.Fatalln("invalid property")
 	}
 
-	file1, err := os.Create("/Users/userid/path/to/csv/profiles.csv")
+	file1, err := os.Create(profilesCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -234,7 +234,7 @@ func ProfileEdit() {
 
 
 func ProfileDelete() {
-	file, err := os.Open("/Users/userid/path/to/csv/profiles.csv")
+	file, err := os.Open(profilesCSV)
 	if err != nil {
 		panic(err)
 	}
@@ -286,7 +286,7 @@ func ProfileDelete() {
 	}
 
 
-	file1, err := os.Create("/Users/userid/path/to/csv/profiles.csv")
+	file1, err := os.Create(profilesCSV)
 	if err != nil {
 		panic(err)
 	}

@@ -27,7 +27,7 @@ func csvRead(file *os.File) ([][]string) {
 }
 // Gets the profile specified in the task.
 func getTaskProf(taskRecords [][]string, taskId int) ([]string){
-	profFile, err := os.Open("/Users/userid/path/to/csv/profiles.csv")
+	profFile, err := os.Open(profilesCSV)
 	if err != nil {
 		panic(err)
 	}

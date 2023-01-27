@@ -8,8 +8,13 @@ import (
 	"bufio"
 	"strings"
 )
+var tasksCSV string
+var profilesCSV string
+
 
 func main() {
+	tasksCSV = "/Users/userid/path/to/csv/tasks.csv"
+	profilesCSV = "/Users/userid/path/to/csv/profiles.csv"
 	if err := root(os.Args[1:]); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
